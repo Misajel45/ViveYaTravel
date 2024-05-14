@@ -12,7 +12,6 @@
     <jsp:include page="header.jsp"/>
     <body>
         <main>
-            <h1>BIENVENIDOS A VIVE YA TRAVEL</h1>
         </main>
 
         <!-- carrusel de imagenes -->
