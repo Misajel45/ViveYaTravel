@@ -3,9 +3,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link href="../css/inicioSesion.css" rel="stylesheet" type="text/css"/>
+        <title>Iniciar Sesion</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="formulario">
+        <h1>Inicio de sesion</h1>
+        <form method="post">
+            <div class="user">
+                <input type="text" required>
+                <label>Correo Electronico</label>
+            </div>
+            <div class="user">
+                <input type="password" required>
+                <label>Contraseña</label>
+            </div>
+            <div class="recordar">¿Olvidaste tu contraseña?</div>
+            <input type="submit" value="iniciar">
+            <div class="registrarse">
+                Crear <a href="#">cuenta</a>
+            </div>
+        </form>
+        </div>
     </body>
 </html>
