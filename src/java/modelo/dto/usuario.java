@@ -3,6 +3,7 @@ package modelo.dto;
 public class usuario {
     private int idUsuario;
     private String correoElectronico;
+    private String username;
     private String clave;
     private cargo cargo;
 
@@ -21,6 +22,16 @@ public class usuario {
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    
 
     public String getClave() {
         return clave;

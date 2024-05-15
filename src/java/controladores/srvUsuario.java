@@ -103,7 +103,7 @@ public class srvUsuario extends HttpServlet {
             sesion.setAttribute("cliente", usuario);
             this.getServletConfig().getServletContext().getRequestDispatcher("/vista/index.jsp").forward(request, response);
         } else{
-            request.setAttribute("msje", "Credenciales incorrectas");
+            request.setAttribute("msjeCredenciales", "Credenciales incorrectas");
             request.getRequestDispatcher("./vista/iniciarSesion.jsp").forward(request, response);
         }
         

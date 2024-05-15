@@ -20,6 +20,10 @@ header {
     margin: 0 auto;
 }
 
+.usuario {
+    margin-left: 10px; /* Ajusta el espacio entre el mensaje de bienvenida y el ícono de usuario */
+}
+
 .logo, .usuario, .carrito {
     width: 100px; /* Ajustar el tamaño*/
 }
@@ -51,4 +55,29 @@ header {
 .usuario{
     color: white;
     font-size: 25px;
+}
+
+.usuario:hover{
+    color: black;
+}
+
+.usuario a{
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.usuario-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /*Contenedor de usuario a la derecha */
+}
+
+.usuario-container .usuario {
+    margin-left: 10px; /* Espacio entre el mensaje de bienvenida y el ícono de usuario */
+}
+
+.cerrar{
+    font-size: 25px;
+    color: #C40C0C;
 }

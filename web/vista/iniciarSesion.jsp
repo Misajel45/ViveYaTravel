@@ -23,7 +23,14 @@
             <div class="registrarse">
                 Crear <a href="#">cuenta</a>
             </div>
+            <div class="volver">
+                Volver al <a href="index.jsp">inicio</a>
+            </div>
         </form>
+            <div>
+                <p>Verificacion credenciales:</p>
+                ${msjeCredenciales}
+            </div>
         </div>
     </body>
 </html>
