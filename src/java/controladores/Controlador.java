@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "Controlador", urlPatterns = {"/Controlador"}, loadOnStartup = 1)
+@WebServlet(name = "Controlador", urlPatterns = {"/Controlador"})
 public class Controlador extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
