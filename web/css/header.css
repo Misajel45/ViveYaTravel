@@ -62,7 +62,7 @@ header {
 }
 
 .usuario a{
-    color: #fff;
+    color: white;
     font-size: 15px;
     text-decoration: none;
 }
@@ -70,8 +70,8 @@ header {
 .usuario-container {
     display: flex;
     align-items: center;
-    margin-left: auto; /*Contenedor de usuario a la derecha */
-}
+    margin-left: auto; /*Contenedor de usuario a la derecha*/
+    }
 
 .usuario-container .usuario {
     margin-left: 10px; /* Espacio entre el mensaje de bienvenida y el ícono de usuario */
