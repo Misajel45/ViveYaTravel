@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-05-2024 a las 19:30:26
+-- Tiempo de generación: 16-05-2024 a las 00:45:20
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -142,9 +142,19 @@ CREATE TABLE `tipohabitacion` (
 CREATE TABLE `usuario` (
   `idUsuario` int(11) NOT NULL,
   `correoElectronico` varchar(40) NOT NULL,
+  `username` varchar(20) NOT NULL,
   `clave` varchar(16) NOT NULL,
   `idCargo` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `correoElectronico`, `username`, `clave`, `idCargo`) VALUES
+(2, 'jose45@gmail.com', 'Jose', '1234', 1),
+(3, 'sebas', 'Sebastian', '456', 1),
+(4, 'maria123@hotmail.com', 'Maria Fernanda', '123456', 1);
 
 -- --------------------------------------------------------
 
@@ -309,7 +319,7 @@ ALTER TABLE `tipohabitacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `viajepersonalizado`
