@@ -1,3 +1,4 @@
+<%--Librerias --%>
 <%@page import="modelo.dao.PaqueteDAO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.ArrayList"%>
@@ -17,6 +18,8 @@
         <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
         <link href="../css/tours.css" rel="stylesheet" type="text/css"/>
     </head>
+    
+    <%-- Traer header --%>
     <jsp:include page="header.jsp"/>
     
     <body>
