@@ -8,25 +8,25 @@
     </head>
     <body>
         <div class="formulario">
-        <h1>Inicio de sesion</h1>
-        <form action="${pageContext.request.contextPath}/srvUsuario?accion=verificar" method="post">
-            <div class="user">
-                <input type="text" name="correo" id="correo" required>
-                <label>Correo Electronico</label>
-            </div>
-            <div class="user">
-                <input type="password" name="clave" id="clave" required>
-                <label>Contraseña</label>
-            </div>
-            <div class="recordar">¿Olvidaste tu contraseña?</div>
-            <input type="submit" name="verificar" id="Verificar" value="iniciar">
-            <div class="registrarse">
-                Crear <a href="#">cuenta</a>
-            </div>
-            <div class="volver">
-                Volver al <a href="index.jsp">inicio</a>
-            </div>
-        </form>
+            <h1>Inicio de sesion</h1>
+            <form action="${pageContext.request.contextPath}/srvUsuario?accion=verificar" method="post">
+                <div class="user">
+                    <input type="text" name="correo" id="correo" required>
+                    <label>Correo Electronico</label>
+                </div>
+                <div class="user">
+                    <input type="password" name="clave" id="clave" required>
+                    <label>Contraseña</label>
+                </div>
+                <div class="recordar">¿Olvidaste tu contraseña?</div>
+                <input type="submit" name="verificar" id="Verificar" value="iniciar">
+                <div class="registrarse">
+                    Crear <a href="vista/registrar.jsp">cuenta</a>
+                </div>
+                <div class="volver">
+                    Volver al <a href="index.jsp">inicio</a>
+                </div>
+            </form>
             <div>
                 <p>Verificacion credenciales:</p>
                 ${msjeCredenciales}

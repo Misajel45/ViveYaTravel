@@ -20,7 +20,7 @@ public class usuarioDAO {
         usuario usu = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String cadSQL = "SELECT u.idUsuario, u.username, c.nombreCargo FROM usuario u\n" +
+        String cadSQL = "SELECT u.idUsuario, u.nombre, c.nombreCargo FROM usuario u\n" +
                         "inner join cargo c on u.idCargo = c.idCargo\n" +
                         "where u.correoElectronico = '" + user.getCorreoElectronico() + "' "
                         + "AND u.clave = '" + user.getClave() + "'";
@@ -30,7 +30,7 @@ public class usuarioDAO {
             if(rs.next() == true){
                 usu = new usuario();
                 usu.setIdUsuario(rs.getInt("idUsuario"));
-                usu.setUsername(rs.getString("username"));
+                usu.setNombre(rs.getString("nombre"));
                 usu.setCorreoElectronico(user.getCorreoElectronico());
                 usu.setCargo(new cargo());
                 usu.getCargo().setNombreCargo(rs.getString("nombreCargo"));
@@ -54,5 +54,6 @@ public class usuarioDAO {
         }
         return usu;
     }
+    
     
 }

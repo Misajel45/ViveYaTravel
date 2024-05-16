@@ -2,8 +2,11 @@ package modelo.dto;
 
 public class usuario {
     private int idUsuario;
+    private String nombre;
+    private String apellido;
+    private int nroCelular;
+    private int nroDni;
     private String correoElectronico;
-    private String username;
     private String clave;
     private cargo cargo;
 
@@ -15,6 +18,40 @@ public class usuario {
         this.idUsuario = idUsuario;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getNroCelular() {
+        return nroCelular;
+    }
+
+    public void setNroCelular(int nroCelular) {
+        this.nroCelular = nroCelular;
+    }
+
+    public int getNroDni() {
+        return nroDni;
+    }
+
+    public void setNroDni(int nroDni) {
+        this.nroDni = nroDni;
+    }
+    
+    
+
     public String getCorreoElectronico() {
         return correoElectronico;
     }
@@ -22,16 +59,6 @@ public class usuario {
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-    
-    
 
     public String getClave() {
         return clave;

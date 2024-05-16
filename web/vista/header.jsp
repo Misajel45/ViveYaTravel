@@ -25,7 +25,7 @@
             <% 
                 usuario cliente = (usuario) session.getAttribute("cliente");
                 if (cliente != null) {
-                    out.print("Hola " + cliente.getUsername());
+                    out.print("Hola " + cliente.getNombre());
                 } else {
                     out.print("Bienvenido invitado");
                 }
