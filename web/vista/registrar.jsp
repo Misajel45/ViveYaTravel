@@ -3,13 +3,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="${pageContext.request.contextPath}/css/registroUsuario.css" rel="stylesheet" type="text/css"/>
         <title>Registrar</title>
     </head>
     <body>
         <div class="formularioRegistro">
             <h1>Registrarse</h1>
             <p>Es rápido y fácil</p>
-            <form  method="post">
+            <form action="${pageContext.request.contextPath}/srvRegistroUsuario" method="post">
                 <div class="registro">
                     <input type="text" name="nombre" id="nombre" required>
                     <label>Nombre</label>
@@ -19,23 +20,24 @@
                     <label>Apellido</label>
                 </div>
                 <div class="registro">
-                    <input type="text" name="celular" id="celular" required>
+                    <input type="text" name="nroCelular" id="celular" required>
                     <label>Celular</label>
                 </div>
                 <div class="registro">
-                    <input type="text" name="dni" id="dni" required>
-                    <label>Numero de DNI</label>
+                    <input type="text" name="nroDni" id="dni" required>
+                    <label>DNI</label>
                 </div>
                 <div class="registro">
                     <input type="text" name="correoElectronico" id="correoElectronico" required>
-                    <label>CorreoElectronico</label>
+                    <label>Correo Electronico</label>
                 </div>
                 <div class="registro">
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="clave" id="password" required>
                     <label>Contraseña</label>
                 </div>
-                <input type="submit" name="registrar" id="Registrar" value="iniciar">
+                <input type="submit" name="registrar" id="Registrar" value="Registrarte">
             </form>
+
         </div>
     </body>
 </html>

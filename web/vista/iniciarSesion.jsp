@@ -21,7 +21,7 @@
                 <div class="recordar">¿Olvidaste tu contraseña?</div>
                 <input type="submit" name="verificar" id="Verificar" value="iniciar">
                 <div class="registrarse">
-                    Crear <a href="vista/registrar.jsp">cuenta</a>
+                    Crear <a href="registrar.jsp">cuenta</a>
                 </div>
                 <div class="volver">
                     Volver al <a href="index.jsp">inicio</a>
