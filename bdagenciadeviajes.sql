@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2024 a las 02:38:53
+-- Tiempo de generación: 16-05-2024 a las 06:06:48
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -86,10 +86,25 @@ CREATE TABLE `detalleviajepersonalizado` (
 CREATE TABLE `paquete` (
   `idPaquete` int(11) NOT NULL,
   `nombrePaquete` varchar(20) DEFAULT NULL,
-  `codigoViaje` int(11) DEFAULT NULL,
   `descripcionPaquete` varchar(150) DEFAULT NULL,
-  `precioPaquete` double DEFAULT NULL
+  `precioPaquete` double DEFAULT NULL,
+  `imagen` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `paquete`
+--
+
+INSERT INTO `paquete` (`idPaquete`, `nombrePaquete`, `descripcionPaquete`, `precioPaquete`, `imagen`) VALUES
+(1, 'Paracas Ica', 'Full Day', 115, 'paracas.png'),
+(2, 'Canta Cordillera de ', 'Full Day', 85, 'canta.png'),
+(5, 'Marcapomacocha', 'Full Day', 105, 'marcapomacocha.png'),
+(6, 'Lunahuaná', 'Full Day', 79, 'lunahuana.png'),
+(7, 'Chancay', 'Full Day', 85, 'chancay.png'),
+(8, 'Churin', 'Full Day', 85, 'churin.png'),
+(9, 'Antioquía', 'Full Day', 59, 'antioquia.png'),
+(10, 'Paracas Ica - Lunahu', '2 días 1 noche', 259, 'camp-lunahuana.png'),
+(11, 'Lunahuaná', '2 días 1 noche', 199, 'lunahuana2d.png');
 
 -- --------------------------------------------------------
 
@@ -141,7 +156,9 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `nroCelular`, `nroDni`, `correoElectronico`, `clave`, `idCargo`) VALUES
 (1, 'Jose', 'Caceres', 900547116, 57640997, 'jose45@gmail.com', '1234', 1),
-(2, 'maria', 'garcia', 944027100, 44003366, 'maria123@hotmail.com', '456', 1);
+(2, 'maria', 'garcia', 944027100, 44003366, 'maria123@hotmail.com', '456', 1),
+(3, 'Sebastian', 'Misajel', 111444, 78945612, 'misajel456@hotmail.com', '123456', 1),
+(4, 'Paul', 'Gallegos', 777444110, 87410000, 'paul456@ejemplo.com', 'gallegos', 1);
 
 -- --------------------------------------------------------
 
@@ -275,7 +292,7 @@ ALTER TABLE `detalleviajepersonalizado`
 -- AUTO_INCREMENT de la tabla `paquete`
 --
 ALTER TABLE `paquete`
-  MODIFY `idPaquete` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPaquete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
@@ -293,7 +310,7 @@ ALTER TABLE `tipohabitacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `viajepersonalizado`
