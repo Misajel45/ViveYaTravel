@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2024 a las 00:45:20
+-- Tiempo de generación: 16-05-2024 a las 02:38:53
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -68,21 +68,6 @@ INSERT INTO `cargo` (`idCargo`, `nombreCargo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
---
-
-CREATE TABLE `cliente` (
-  `idCliente` int(11) NOT NULL,
-  `nombre` varchar(25) NOT NULL,
-  `apellido` varchar(25) NOT NULL,
-  `nroCelular` int(11) NOT NULL,
-  `nroDni` int(11) NOT NULL,
-  `idUsuario` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `detalleviajepersonalizado`
 --
 
@@ -117,7 +102,7 @@ CREATE TABLE `pedido` (
   `pedidoFecha` date DEFAULT NULL,
   `pedidoHora` time DEFAULT NULL,
   `valorPedido` double DEFAULT NULL,
-  `idCliente` int(11) DEFAULT NULL
+  `idUsuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -141,8 +126,11 @@ CREATE TABLE `tipohabitacion` (
 
 CREATE TABLE `usuario` (
   `idUsuario` int(11) NOT NULL,
+  `nombre` varchar(25) NOT NULL,
+  `apellido` varchar(25) NOT NULL,
+  `nroCelular` int(9) NOT NULL,
+  `nroDni` int(8) NOT NULL,
   `correoElectronico` varchar(40) NOT NULL,
-  `username` varchar(20) NOT NULL,
   `clave` varchar(16) NOT NULL,
   `idCargo` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -151,10 +139,9 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idUsuario`, `correoElectronico`, `username`, `clave`, `idCargo`) VALUES
-(2, 'jose45@gmail.com', 'Jose', '1234', 1),
-(3, 'sebas', 'Sebastian', '456', 1),
-(4, 'maria123@hotmail.com', 'Maria Fernanda', '123456', 1);
+INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `nroCelular`, `nroDni`, `correoElectronico`, `clave`, `idCargo`) VALUES
+(1, 'Jose', 'Caceres', 900547116, 57640997, 'jose45@gmail.com', '1234', 1),
+(2, 'maria', 'garcia', 944027100, 44003366, 'maria123@hotmail.com', '456', 1);
 
 -- --------------------------------------------------------
 
@@ -208,13 +195,6 @@ ALTER TABLE `cargo`
   ADD PRIMARY KEY (`idCargo`);
 
 --
--- Indices de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`idCliente`),
-  ADD KEY `fk_user_cli` (`idUsuario`);
-
---
 -- Indices de la tabla `detalleviajepersonalizado`
 --
 ALTER TABLE `detalleviajepersonalizado`
@@ -233,7 +213,7 @@ ALTER TABLE `paquete`
 --
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`idPedido`),
-  ADD KEY `FK_ped_cli` (`idCliente`);
+  ADD KEY `FK_ped_usu` (`idUsuario`);
 
 --
 -- Indices de la tabla `tipohabitacion`
@@ -286,12 +266,6 @@ ALTER TABLE `cargo`
   MODIFY `idCargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT de la tabla `detalleviajepersonalizado`
 --
 ALTER TABLE `detalleviajepersonalizado`
@@ -319,7 +293,7 @@ ALTER TABLE `tipohabitacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `viajepersonalizado`
@@ -344,12 +318,6 @@ ALTER TABLE `alojamiento`
   ADD CONSTRAINT `FK_Alojamiento_TipoHabi` FOREIGN KEY (`idTipoHabitacion`) REFERENCES `tipohabitacion` (`idTipoHabitacion`);
 
 --
--- Filtros para la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD CONSTRAINT `fk_user_cli` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
-
---
 -- Filtros para la tabla `detalleviajepersonalizado`
 --
 ALTER TABLE `detalleviajepersonalizado`
@@ -360,7 +328,7 @@ ALTER TABLE `detalleviajepersonalizado`
 -- Filtros para la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  ADD CONSTRAINT `FK_ped_cli` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`);
+  ADD CONSTRAINT `FK_ped_usu` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
 -- Filtros para la tabla `usuario`
