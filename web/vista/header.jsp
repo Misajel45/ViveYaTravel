@@ -11,14 +11,14 @@
     <div class="navbar">
         <nav>
             <ul class="menu">
-                <li><a href="tours.jsp">TOURS</a></li>
-                <li><a href="promociones.jsp">PROMOCIONES</a></li>
-                <li><a href="nosotros.jsp">NOSOTROS</a></li>
+                <li><a href="${pageContext.request.contextPath}/vista/catalogo.jsp">TOURS</a></li>
+                <li><a href="${pageContext.request.contextPath}/vista/promociones.jsp">PROMOCIONES</a></li>
+                <li><a href="${pageContext.request.contextPath}/vista/nosotros.jsp">NOSOTROS</a></li>
             </ul>
         </nav>
     </div>
     <div class="carro">
-        <a href="#"><img class="carrito" src="${pageContext.request.contextPath}/images/carrito.png" alt="Carrito"/></a>
+        <a href="#"><img class="carrito"/><i class="fa-solid fa-cart-shopping carrito"></i></a>
     </div>
     <div class="usuario-container">
         <p class="bienvenido">

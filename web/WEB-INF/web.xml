@@ -12,6 +12,10 @@
         <servlet-name>srvRegistroUsuario</servlet-name>
         <servlet-class>controladores.srvRegistroUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PaqueteControlador</servlet-name>
+        <servlet-class>controladores.PaqueteControlador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>srvRegistroUsuario</servlet-name>
         <url-pattern>/srvRegistroUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaqueteControlador</servlet-name>
+        <url-pattern>/PaqueteControlador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

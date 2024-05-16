@@ -20,14 +20,24 @@ header {
     margin: 0 auto;
 }
 
+.logo,
+.usuario,
+.carrito{
+    width: 30px; /* Ajustar el tamaño*/
+}
+
 .usuario {
-    margin-left: 10px; /* Ajusta el espacio entre el mensaje de bienvenida y el ícono de usuario */
+    margin-left: 10px; /* Espacio entre el mensaje de bienvenida y el ícono de usuario */
 }
 
-.logo, .usuario, .carrito {
-    width: 100px; /* Ajustar el tamaño*/
-}
+/*.logo, .usuario, .carrito {
+    width: 100px;  Ajustar el tamaño
+}*/
 
+.carrito{
+    color: #fff;
+    font-size: 25px;
+}
 /* Menú de navegación */
 .navbar nav ul.menu {
     list-style: none;
