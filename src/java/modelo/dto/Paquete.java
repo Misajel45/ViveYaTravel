@@ -6,16 +6,18 @@ public class Paquete {
     String descripcionPaquete;
     double precioPaquete;
     String imagen;
+    String categoria;
 
     public Paquete() {
     }
 
-    public Paquete(int idPaquete, String nombrePaquete, String descripcionPaquete, double precioPaquete, String imagen) {
+    public Paquete(int idPaquete, String nombrePaquete, String descripcionPaquete, double precioPaquete, String imagen, String categoria) {
         this.idPaquete = idPaquete;
         this.nombrePaquete = nombrePaquete;
         this.descripcionPaquete = descripcionPaquete;
         this.precioPaquete = precioPaquete;
         this.imagen = imagen;
+        this.categoria = categoria;
     }
 
     public int getIdPaquete() {
@@ -56,6 +58,14 @@ public class Paquete {
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     

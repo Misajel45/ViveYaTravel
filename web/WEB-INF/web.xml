@@ -16,6 +16,10 @@
         <servlet-name>PaqueteControlador</servlet-name>
         <servlet-class>controladores.PaqueteControlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>srvPromocion</servlet-name>
+        <servlet-class>controladores.srvPromocion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>PaqueteControlador</servlet-name>
         <url-pattern>/PaqueteControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvPromocion</servlet-name>
+        <url-pattern>/srvPromocion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

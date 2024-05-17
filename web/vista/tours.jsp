@@ -14,22 +14,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="../css/header.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/tours.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/css/tours.css" rel="stylesheet" type="text/css"/>
     </head>
     
     <%-- Traer header --%>
     <jsp:include page="header.jsp"/>
     
     <body>
-        <h1>PAQUETES DE VIAJE</h1>
+        <h1 class="tCat">Crea recuerdos...</h1>
+        
         <div class="contenedor">
             <div class="contenedor-paquetes">
-                <!--Paquete 1 -->
+                <!--Paquete-->
                 <c:forEach var="p" items="${lista}">
                 <div class="tour">
-                    <img src="../paquetes/${p.getImagen()}" alt="lugares"/>
+                    <img src="${pageContext.request.contextPath}/paquetes/${p.getImagen()}" alt="lugares"/>
                     <div class="info">
                         <h2>${p.getNombrePaquete()}</h2>
                         <p>${p.getDescripcionPaquete()}</p>

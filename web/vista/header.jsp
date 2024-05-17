@@ -11,8 +11,9 @@
     <div class="navbar">
         <nav>
             <ul class="menu">
-                <li><a href="${pageContext.request.contextPath}/vista/catalogo.jsp">TOURS</a></li>
-                <li><a href="${pageContext.request.contextPath}/vista/promociones.jsp">PROMOCIONES</a></li>
+                <!--Para encontrar la ruta request.getContextPath()%> -->
+                <li><a href="<%=request.getContextPath()%>/PaqueteControlador">TOURS</a></li>
+                <li><a href="<%=request.getContextPath()%>/srvPromocion">PROMOCIONES</a></li>
                 <li><a href="${pageContext.request.contextPath}/vista/nosotros.jsp">NOSOTROS</a></li>
             </ul>
         </nav>
