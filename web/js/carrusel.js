@@ -3,9 +3,10 @@ const btnLeft = document.querySelector(".btn-left"),
       slider = document.querySelector("#slider"),
       sliderSection = document.querySelectorAll(".slider-section");
 
-btnLeft.addEventListener("click", e => moveToLeft());
+btnLeft.addEventListener("click", e => moveToLeft());  //Cuando se haga clicl en el btnLeft se ejecutar la funcion moveToLeft
 btnRight.addEventListener("click", e => moveToRight());
 
+//Cada 5s se realizara el metodo moveToRight
 setInterval(() =>{
     moveToRight();
 },5000);
