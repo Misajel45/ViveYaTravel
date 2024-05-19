@@ -13,21 +13,22 @@ public class usuarioDAO {
     private Connection cn;
 
     public usuarioDAO() {
-        cn = new ConectarBD().getConexion();
+        cn = new ConectarBD().getConexion();   //Inicia la conexion a la BD
     }
 
     public usuario identificar(usuario user) throws SQLException {
-        usuario usu = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
+        usuario usu = null;     //Va a recibir el objeto usuario
+        PreparedStatement ps = null;   //Para preparar la consulta
+        ResultSet rs = null;  
+        //La consulta desde la base de datos
         String cadSQL = "SELECT u.idUsuario, u.nombre, c.nombreCargo FROM usuario u\n"
                 + "inner join cargo c on u.idCargo = c.idCargo\n"
-                + "where u.correoElectronico = '" + user.getCorreoElectronico() + "' "
-                + "AND u.clave = '" + user.getClave() + "'";
+                + "where u.correoElectronico = '" + user.getCorreoElectronico() + "' " 
+                + "AND u.clave = '" + user.getClave() + "'";     
         try {
             ps = cn.prepareStatement(cadSQL);
-            rs = ps.executeQuery();
-            if (rs.next() == true) {
+            rs = ps.executeQuery();  
+            if (rs.next() == true) {  //Si encuentra una consulta, realiza el bloque de codigo
                 usu = new usuario();
                 usu.setIdUsuario(rs.getInt("idUsuario"));
                 usu.setNombre(rs.getString("nombre"));
@@ -36,10 +37,10 @@ public class usuarioDAO {
                 usu.getCargo().setNombreCargo(rs.getString("nombreCargo"));
 
             }
-        } catch (Exception e) {
+        } catch (Exception e) {  //Manejo de execpciones
             System.out.println("Error " + e.getMessage());
-        } finally {
-            if (rs != null && rs.isClosed() == false) {
+        } finally { //Cierre del Resulset y preparedStatement
+            if (rs != null && rs.isClosed() == false) {  
                 rs.close();
             }
             rs = null;
@@ -49,7 +50,7 @@ public class usuarioDAO {
             ps = null;
 
         }
-        return usu;
+        return usu;  
     }
 
     public usuario registrar(usuario user) throws SQLException {

@@ -36,7 +36,7 @@
             <% if (cliente != null) { %>
                 <a href="${pageContext.request.contextPath}/srvUsuario?accion=cerrar"><i class="fa-solid fa-right-to-bracket cerrar"></i></a>
             <% } else { %>
-                <a href="iniciarSesion.jsp"><i class="fa-solid fa-user usuario"></i></a>
+                <a href="${pageContext.request.contextPath}/vista/iniciarSesion.jsp"><i class="fa-solid fa-user usuario"></i></a>
             <% } %>
         </div>
     </div>

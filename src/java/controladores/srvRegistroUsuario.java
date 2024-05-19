@@ -10,24 +10,26 @@ import javax.servlet.http.HttpServletResponse;
 import modelo.dao.usuarioDAO;
 import modelo.dto.usuario;
 
-@WebServlet(name = "srvRegistroUsuario", urlPatterns = {"/srvRegistroUsuario"})
+@WebServlet(name = "srvRegistroUsuario", urlPatterns = {"/srvRegistroUsuario"})   //Definicion del nombre del servlet y la url de como acceder
 
 public class srvRegistroUsuario extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String accion = request.getParameter("registrar");
+        String accion = request.getParameter("registrar");  //Obtiene el valor de registrar de la solicitud
         
-        if (accion != null) {
-            if (accion.equals("Registrarte")) {
-                String nombre = request.getParameter("nombre");
+        if (accion != null) { //Si la accion no es nula
+            if (accion.equals("Registrarte")) {  //Si la accion es igual a Registrarte realiza el bloque de codigo
+                //Se obtiene los valores del formulario
+                String nombre = request.getParameter("nombre");  
                 String apellido = request.getParameter("apellido");
                 String nroCelularStr = request.getParameter("nroCelular");
                 String nroDniStr = request.getParameter("nroDni");
                 String correoElectronico = request.getParameter("correoElectronico");
                 String clave = request.getParameter("clave");
 
+                //Convierte la cadena de texto a enteros, el nroCelular y el DNI
                 int nroCelular = 0;
                 if (nroCelularStr != null && !nroCelularStr.isEmpty()) {
                     nroCelular = Integer.parseInt(nroCelularStr);
@@ -39,7 +41,7 @@ public class srvRegistroUsuario extends HttpServlet {
                 }
 
                 
-                usuario usuario = new usuario();
+                usuario usuario = new usuario();  //Se instancia el objeto usuario
                 usuario.setNombre(nombre);
                 usuario.setApellido(apellido);
                 usuario.setNroCelular(nroCelular);
@@ -53,7 +55,7 @@ public class srvRegistroUsuario extends HttpServlet {
                 try {
                     // Registra el usuario en la base de datos
                     usuarioDAO.registrar(usuario);
-                    // Redireccionar a una página de éxito
+                    // Redireccionar una vez el registro fue exitoso
                     response.sendRedirect("./vista/iniciarSesion.jsp");
                 } catch (Exception ex) {
                     // En caso de error

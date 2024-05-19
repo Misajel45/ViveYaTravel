@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import modelo.dao.usuarioDAO;
 import modelo.dto.usuario;
 
-@WebServlet(name="srvUsuario", urlPatterns = {"/srvUsuario"}) 
+@WebServlet(name="srvUsuario", urlPatterns = {"/srvUsuario"})   //Definicion del nombre del servlet y la url de como acceder
 
 public class srvUsuario extends HttpServlet {
 
@@ -20,23 +20,23 @@ public class srvUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String accion = request.getParameter("accion");
+        String accion = request.getParameter("accion"); //Se obtiene el valor del parametro accion
         try {
             if(accion != null){
-                switch (accion){
-                    case "verificar":
-                        verificar(request, response);
+                switch (accion){ //Evalua el valor de la accion
+                    case "verificar": 
+                        verificar(request, response); //Llama al metodo verificar
                         break;
                     case "cerrar":
-                        cerrarSesion(request, response);
+                        cerrarSesion(request, response); //Llama al metodo cerrar
                         break;
                     default:
-                        response.sendRedirect("/vista/iniciarSesion");
+                        response.sendRedirect("/vista/iniciarSesion"); //Por defecto, si no es ni verificar ni cerrar
                 }
             } else {
-                response.sendRedirect("/vista/iniciarSesion");
+                response.sendRedirect("/vista/iniciarSesion"); 
             }
-        } catch (Exception e) {
+        } catch (Exception e) { //Manejo de exepciones
             try {
                 this.getServletConfig().getServletContext().getRequestDispatcher("/vista/mensaje.jsp").forward(request, response);
                 
@@ -90,34 +90,35 @@ public class srvUsuario extends HttpServlet {
         HttpSession sesion;
         usuarioDAO dao;
         usuario usuario;
-        usuario = this.obtenerUsuario(request);
+        usuario = this.obtenerUsuario(request);  //llama al metodo obtener usuario
         dao = new usuarioDAO();
-        usuario = dao.identificar(usuario);
-        if(usuario != null && usuario.getCargo().getNombreCargo().equals("administrador")){
-            sesion = request.getSession();
+        usuario = dao.identificar(usuario); //Verificar las credenciales con el metodo identificar que esta en la clase usuarioDAO
+        if(usuario != null && usuario.getCargo().getNombreCargo().equals("administrador")){ //Si el cargo es administrador
+            sesion = request.getSession(); //Crea una sesion
             sesion.setAttribute("usuario", usuario);
             request.setAttribute("mensaje", "Bienvenido");
-            this.getServletConfig().getServletContext().getRequestDispatcher("/vista/index.jsp").forward(request, response);  //Redireccion a la vista del admin
-        } else if(usuario != null && usuario.getCargo().getNombreCargo().equals("cliente")){
+            this.getServletConfig().getServletContext().getRequestDispatcher("/vista/index.jsp").forward(request, response);  //Redirecciona la vista del administrador
+        } else if(usuario != null && usuario.getCargo().getNombreCargo().equals("cliente")){ //Si el cargo es cliente
             sesion = request.getSession();
             sesion.setAttribute("cliente", usuario);
-            this.getServletConfig().getServletContext().getRequestDispatcher("/vista/index.jsp").forward(request, response);
+            this.getServletConfig().getServletContext().getRequestDispatcher("/vista/index.jsp").forward(request, response); //Redirecciona a la vista de cliente
         } else{
-            request.setAttribute("msjeCredenciales", "Credenciales incorrectas");
-            request.getRequestDispatcher("./vista/iniciarSesion.jsp").forward(request, response);
+            request.setAttribute("msjeCredenciales", "Credenciales incorrectas");  //Si las credenciales son incorrectas
+            request.getRequestDispatcher("./vista/iniciarSesion.jsp").forward(request, response); //Redirecciona a la pagina de inicio
         }
         
     }
 
     private void cerrarSesion(HttpServletRequest request, HttpServletResponse response) throws Exception{
         HttpSession sesion = request.getSession();
-        sesion.setAttribute("usuario", null);
+        sesion.setAttribute("usuario", null); //Cierra la sesion y redirecciona a la vista Iniciar sesion
         sesion.invalidate();
         response.sendRedirect("./vista/iniciarSesion.jsp");
     }
 
     private usuario obtenerUsuario(HttpServletRequest request) {
-        usuario u = new usuario();
+        usuario u = new usuario(); //Crea el objeto usuario
+        //Establece su correo electronico y la clave
         u.setCorreoElectronico(request.getParameter("correo"));   //nombre que tiene en el input de la vista iniciarSesion
         u.setClave(request.getParameter("clave"));
         return u;
