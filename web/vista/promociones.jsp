@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  <!-- Importación de biblioteca de etiquetas JSTL -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,8 +15,9 @@
         <div class="contenedor">
             <div class="contenedor-paquetes">
                 <!--Promociones-->
-                <c:forEach var="o" items="${promociones}">
+                <c:forEach var="o" items="${promociones}"> <!--Bucle para recorrer la lista-->
                 <div class="tour">
+                     <!-- Para obtener los datos -->
                     <img src="${pageContext.request.contextPath}/paquetes/${o.getImagen()}" alt="lugares"/>
                     <div class="info">
                         <h2>${o.getNombrePaquete()}</h2>

@@ -29,7 +29,7 @@
                         <img src="${pageContext.request.contextPath}/img/3.jpg" alt="Castillo de Chancay"/>
                     </section>
                 </div>
-                <div class="btn-left"><i class='bx bxs-chevron-left'></i></i></div>
+                <div class="btn-left"><i class='bx bxs-chevron-left'></i></div>
                 <div class="btn-right"><i class='bx bxs-chevron-right'></i></div>
             </div>
         </div>

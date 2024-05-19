@@ -1,3 +1,4 @@
+/*Estilos generales*/
 :root {
     --primario: #e23939;
     --gris-claro: #B8B8B8;
@@ -15,23 +16,28 @@ html {
     font-size: 62.5%;
 }
 
+/*Icono antes del título */
 .tCat::before {
     content: "\1F4F7";
     color: #ffc300;
     margin-right: 1px;
 }
 
+/*Icono después del título */
 .tCat::after {
     content: "\1F697";
     color: #ffc300;
     margin-right: 1px;
 }
 
+/*Estilo para el título*/
 .tCat {
     text-align: center;
     color: #ffc300;
     font-size: 30px;
 }
+
+/*Contenedor de todo los paquetes*/
 .contenedor-paquetes{
    grid-template-columns: repeat(auto-fit, minmax(280px,280px));
     display: grid;
@@ -45,6 +51,7 @@ html {
     grid-auto-rows: 1fr;
 }
 
+/*Estilo para cada paquete*/
 .tour {
     max-width: 250px;
     box-shadow: 0 3px 10px rgb(0 0 0 /20%);
@@ -79,6 +86,7 @@ html {
     margin-bottom: 15px;
 }
 
+/*Botón*/
 .info button {
     padding: 1rem;
     width: 100%;
@@ -93,6 +101,7 @@ html {
     margin-bottom: 5px;
 }
 
+/*Estilo para el botón cuando se pasa el mouse*/
 .tour button:hover {
     background-color: #2da0c3;
     transition: all .3s;
