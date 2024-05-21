@@ -6,10 +6,11 @@ body {
 }
 
 /* Estilos para el header*/
-header {
+.header {
     background-color: #085394;
     color: white;
-    padding: 50px 0;
+    padding: 1px 0;
+    max-height: fit-content;
 }
 
 .contHeader {
