@@ -20,10 +20,8 @@ header {
     margin: 0 auto;
 }
 
-.logo,
-.usuario,
-.carrito{
-    width: 30px; /* Ajustar el tamaño*/
+img .logo {
+    width: 111px;
 }
 
 .usuario {
