@@ -30,7 +30,7 @@
                 distinguiéndonos por nuestra pasión por el servicio al cliente.
             </p>
             <div class="vision-img">  <!-- clase para el apartado de la imagen de la vision -->
-                <img src="../img/vision.png" alt="vision"/><!-- direccion de la imagen vision-->
+                <img src="../img/vision.png" alt="vision" width="200"/><!-- direccion de la imagen vision-->
             </div>
             </div>
              
@@ -42,7 +42,7 @@
                        que inspiren a nuestros clientes, vidas y crear recuerdos únicos. 
                     </p>
             <div class="mision-img"> <!-- clase para el apartado de la imagen de la mision -->
-                <img src="../img/mision.png" alt="mision"/>  <!-- direccion de la imagen mision-->
+                <img src="../img/mision.png" alt="mision" width="200"/>  <!-- direccion de la imagen mision-->
                     </div>
                     </div>
            </section>
