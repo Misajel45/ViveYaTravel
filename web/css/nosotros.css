@@ -1,27 +1,48 @@
+/*Estilo del encabezado "NOSOTROS"*/
 .nosotros{
-    display: flex;
-    justify-content: center;
-    color: #926E61;
-    font-family: "Courier New", monospace;
-            
+    text-align: center; /*alinea el encabezado al centro de la pagina*/
+    color: #ffc300;/*define el color del texto*/
+    font-size: 40px; /*define el tamaño de la fuente del texto.*/      
 }
+/*Estilo del contenido de "NOSOTROS"*/
+.nosotros-text{
+    text-align: center;/*alinea el texto al centro de la pagina*/
+    justify-content: center;/*justifica el contenido agrupado al centro de la pagina*/
+    color: black;/*define el color del texto*/
+    font-size: 30px; /*define el tamaño de la fuente del texto.*/ 
+    line-height: 1.5;/*aplica el interlineado*/
+}
+/*Estilo del contenedor para vision y mision*/
  .contenedor-nosotros {
-    display: flex;
-    justify-content: space-between;
+    display: flex;/*establece al contenedor como un contenedor flexible*/
+    justify-content: space-between; /*justifica el contenido del contenedor dando un espacio entre la vision y mision*/
+    align-items: flex-start;/*define la alineación de los elementos hijos dentro de un contenedor flexible*/
+    margin: auto;/*ejecuta un margen automatico*/
 }
- historia, vision {
-    flex: 1;
-    padding: 20px;
-} 
-  .vision {
-    font-family:arial;
-    font-size: 18px;
-    margin-left: 30px; 
-    padding: 10px;
+/*Estilo de la clase vision y mision*/
+.vision, .mision {
+    width: 50%; /*define la anchura de los elementos vision y mision*/
+}  
+/*Estilo del encabezado de la vision y mision*/
+.vision-heading, .mision-heading{
+    text-align: center;/*alinea el encabezado al centro*/
+    color: #ffc300;/*define el color del texto*/
+    font-size: 25px;/*define el tamaño de la fuente del texto.*/
 }
-  .vision-img{
-    border-radius: 10px;
+/*Estilo de la informacion de la vision y mision*/
+ .vision-text,.mision-text {
+    text-align: center;/*alinea la información al centro de su espacio*/
+    justify-content: center; /*justifica el contenido agrupado al centro de la pagina*/
+    display: flex;/*justifica el contenido agrupado al centro de la pagina*/
+    color: black;/*define el color del texto*/
+    font-size: 20px; /*define el tamaño de la fuente del texto.*/
+    line-height: 1.5;/*aplica el interlineado*/
 }
-.mision-img{
-    border-radius: 10px;
+/*Estilo de las imagenes de la vision y mision*/
+  .vision-img,.mision-img{
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
 }
