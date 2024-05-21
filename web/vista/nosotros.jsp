@@ -9,43 +9,44 @@
     </head>
     
     <jsp:include page="header.jsp"/>       
-    <body>
-    <div class="nosotros">
-        <div class="contenedor-nosotros">
-            <div class="historia">
-                <h1>Nuestra Historia</h1>
-                
-                Somos una agencia de turismo con más de 5 años de experiencia en el rubro del turismo brindando la mejor experiencia a nuestros clientes.
-                Brindamos paquetes turísticos a diversos destinos del Perú para personas residentes de Lima Metropolitana.
-                
-    
-    <div class="vision">
-            <h2>Vision</h2>
-            <p class="vision">
-                Ser reconocidos como líderes en la industria del turismo, 
-                distinguiéndonos por nuestra pasión por el servicio al 
-                cliente.
+     <!-- Encabezado NOSOTROS -->
+        <h1 class="nosotros"> NOSOTROS</h1> 
+        <p class="nosotros-text">  <!-- clase para colocar la información  sobre la empresa -->
+                Somos una agencia de turismo con más de 5 años de experiencia en el
+                <br><!-- propiedad para separar texto-->
+                rubro del turismo brindando la mejor experiencia a nuestros clientes.
+                <br>
+                Brindamos paquetes turísticos a diversos destinos del Perú para
+                <br>
+                personas residentes de Lima Metropolitana.
+     </p>
+        <!-- Crear un contenedor para añadir la mision y vision -->
+        <section class="contenedor-nosotros">
+         <div class="vision"> <!-- clase para el apartado de la vision -->
+            <h2 class="vision-heading">Vision</h2>  <!-- encabezado Vision -->
+            <p class="vision-text">  <!-- clase para colocar la vision de la empresa -->
+                Ser reconocidos como líderes en la industria del turismo,
+                <br> 
+                distinguiéndonos por nuestra pasión por el servicio al cliente.
             </p>
-            <div class="vision">
-                <img class="vision-img" src="../img/vision.png" weight="200" height="200">
+            <div class="vision-img">  <!-- clase para el apartado de la imagen de la vision -->
+                <img src="../img/vision.png" alt="vision"/><!-- direccion de la imagen vision-->
             </div>
-
-             <h3>Mision</h3>
-             <div class="mision">
-                    <p>
-                       Proporcionar experiencias de viaje inolvidables y 
-                        personalizadas que inspiren a nuestros clientes, 
-                        enriquecer sus vidas y crear recuerdos únicos. 
+            </div>
+             
+             <div class="mision"><!-- clase para el apartado de la mision -->
+                 <h3 class="mision-heading">Mision</h3><!-- encabezado Mision -->
+                    <p class="mision-text">   <!-- clase para colocar la mision de la empresa -->
+                       Proporcionar experiencias de viaje inolvidables y personalizadas
+                       <br>
+                       que inspiren a nuestros clientes, vidas y crear recuerdos únicos. 
                     </p>
-            <div class="mision">
-                <img class="mision-img" src="../img/mision.png" weight="200" height="200">
+            <div class="mision-img"> <!-- clase para el apartado de la imagen de la mision -->
+                <img src="../img/mision.png" alt="mision"/>  <!-- direccion de la imagen mision-->
                     </div>
                     </div>
-               </div>
-           </div>
-        </div>
-        </div>
-    </body>
+           </section>
+    <!-- FOOTER-->
     <jsp:include page="footer.jsp"/>0
 
 </html>
