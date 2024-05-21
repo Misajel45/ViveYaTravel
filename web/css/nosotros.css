@@ -40,9 +40,6 @@
 }
 /*Estilo de las imagenes de la vision y mision*/
   .vision-img,.mision-img{
-    max-width: 50%;
-    height: auto;
-    display: block;
-    margin-top: 10px;
-    text-align: center;
+    display: flex;/*establece la imagen como flexible*/
+   justify-content: center;/*justifica la imagen al centro del contenedor*/
 }
