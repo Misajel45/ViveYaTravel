@@ -20,6 +20,10 @@
         <servlet-name>srvPromocion</servlet-name>
         <servlet-class>controladores.srvPromocion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>srvADMIPaquete</servlet-name>
+        <servlet-class>controladores.srvADMIPaquete</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>srvPromocion</servlet-name>
         <url-pattern>/srvPromocion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvADMIPaquete</servlet-name>
+        <url-pattern>/srvADMIPaquete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

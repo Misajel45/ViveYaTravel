@@ -7,17 +7,19 @@ public class Paquete {
     double precioPaquete;
     String imagen;
     String categoria;
+    String detallePaquete;
 
     public Paquete() {
     }
 
-    public Paquete(int idPaquete, String nombrePaquete, String descripcionPaquete, double precioPaquete, String imagen, String categoria) {
+    public Paquete(int idPaquete, String nombrePaquete, String descripcionPaquete, double precioPaquete, String imagen, String categoria, String detallePaquete) {
         this.idPaquete = idPaquete;
         this.nombrePaquete = nombrePaquete;
         this.descripcionPaquete = descripcionPaquete;
         this.precioPaquete = precioPaquete;
         this.imagen = imagen;
         this.categoria = categoria;
+        this.detallePaquete = detallePaquete;
     }
 
     public int getIdPaquete() {
@@ -68,5 +70,14 @@ public class Paquete {
         this.categoria = categoria;
     }
 
+    public String getDetallePaquete() {
+        return detallePaquete;
+    }
+
+    public void setDetallePaquete(String detallePaquete) {
+        this.detallePaquete = detallePaquete;
+    }
+
+    
     
 }

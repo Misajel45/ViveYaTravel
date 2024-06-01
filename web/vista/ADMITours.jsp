@@ -17,8 +17,28 @@
 
     <body>
         <h1 class="tCat">Crea recuerdos...</h1>
+        
+        <form action="<%= request.getContextPath()%>/srvADMIPaquete" method="post" class="formulario" id="formPaquetes">
+                <fieldset>
+                    <label>Imagen</label>
+                    <input type="file" name="imagen" value="${imagen}"/>
+                    <label>Nombre</label>
+                    <input type="text" name="nombrePaquete" value="${nombrePaquete}"/>
+                    <label>Descripción</label>
+                    <input type="text" name="descripcionPaquete" value="${descripcionPaquete}"/>
+                    <label>Precio</label>
+                    <input type="number" name="precioPaquete" value="${precioPaquete}"/>
+                    <label>Categoría</label>
+                    <input type="text" name="categoria" value="${categoria}"/>
+                    <label>Detalle</label>
+                    <input type="text" name="detallePaquete" value="${detallePaquete}"/>
+                    
+                    <input type="submit"  value="Registrar" name="accion"/>
+                </fieldset>
+            </form>
 
         <div class="contenedor">
+            
             <div class="contenedor-paquetes">
                 <!--Paquetes-->               
                 <c:forEach var="p" items="${lista}"> <!--Bucle para recorrer la lista-->
@@ -51,7 +71,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                        
+                            </div>
+
+                        
                     </div> 
                 </c:forEach>
             </div>

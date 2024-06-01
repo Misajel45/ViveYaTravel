@@ -1,3 +1,6 @@
+
+/* Script Pedrooo... */
+
 .container {
 	max-width: 120rem;
 	margin: 0 auto;
@@ -32,25 +35,25 @@
 	gap: 2rem;
 }
 
-.category-moca {
+.category-machu-picchu {
 	background-image: linear-gradient(#00000080, #00000080),
-		url('img/moca-category.jpg');
+		url('paquetes/machu_picchu.jpg');
 	background-size: cover;
 	background-position: bottom;
 	background-repeat: no-repeat;
 }
 
-.category-capuchino {
+.category-amazonas {
 	background-image: linear-gradient(#00000080, #00000080),
-		url('img/capuchino-category.jpg');
+		url('paquetes/amazonas.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
-.category-expreso {
+.category-lago-titicaca {
 	background-image: linear-gradient(#00000080, #00000080),
-		url('img/expreso-category.jpg');
+		url('paquetes/titicaca.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;

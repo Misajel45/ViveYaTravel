@@ -10,7 +10,7 @@
         <link href="${pageContext.request.contextPath}/css/carrusel.css" rel="stylesheet" type="text/css"/>
         <link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
     </head>
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="ADMIHeader.jsp"/>
     <body>
         <main>
         </main>
