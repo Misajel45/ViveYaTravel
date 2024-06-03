@@ -18,19 +18,19 @@
     <body>
         <h1 class="tCat">Crea recuerdos...</h1>
         
-        <form action="<%= request.getContextPath()%>/srvADMIPaquete" method="post" class="formulario" id="formPaquetes">
+        <form action="${pageContext.request.contextPath}/srvADMIPaquete" method="post" class="formulario" id="formPaquetes">
                 <fieldset>
-                    <label>Imagen</label>
-                    <input type="file" name="imagen" value="${imagen}"/>
-                    <label>Nombre</label>
+                    <label for="imagen">Imagen</label>
+                    <input type="text" name="imagen" value="${imagen}"/>
+                    <label for="nombrePaquete">Nombre</label>
                     <input type="text" name="nombrePaquete" value="${nombrePaquete}"/>
-                    <label>Descripción</label>
+                    <label for="descripcionPaquete">Descripción</label>
                     <input type="text" name="descripcionPaquete" value="${descripcionPaquete}"/>
-                    <label>Precio</label>
-                    <input type="number" name="precioPaquete" value="${precioPaquete}"/>
-                    <label>Categoría</label>
+                    <label for="precioPaquete">Precio</label>
+                    <input type="text" name="precioPaquete" value="${precioPaquete}"/>
+                    <label for="categoria">Categoría</label>
                     <input type="text" name="categoria" value="${categoria}"/>
-                    <label>Detalle</label>
+                    <label for="detallePaquete">Detalle</label>
                     <input type="text" name="detallePaquete" value="${detallePaquete}"/>
                     
                     <input type="submit"  value="Registrar" name="accion"/>

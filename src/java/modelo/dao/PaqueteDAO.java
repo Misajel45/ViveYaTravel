@@ -20,10 +20,11 @@ public class PaqueteDAO {
         cnx = new ConectarBD().getConexion();
     }
 
+    //Para poner dentro de una lista los paquetes registrados
     public List listar() {
         List<Paquete> lista = new ArrayList<>();
+        //Consulta SQL para mostrar
         String SQL = "SELECT * FROM paquete WHERE categoria='T'";
-
         try {
             cnx = cn.getConexion();
             ps = cnx.prepareStatement(SQL);
@@ -44,8 +45,10 @@ public class PaqueteDAO {
         return lista;
     }
 
+    //Para poner dentro de una lista las promociones registrados
     public List list() {
         List<Paquete> promociones = new ArrayList<>();
+        //consulta SQL con restricción en la categoria
         String SQL = "SELECT * FROM paquete WHERE categoria='P'";
 
         try {
@@ -69,16 +72,18 @@ public class PaqueteDAO {
         return promociones;
     }
 
+    //Metodo para agregar nuevos tours
     public String insert(Paquete p) {
         String resp = "";
-        String cadSQL = "INSERT INTO paquete (nombrePaquete, descripcionPaquete, precioPaquete, imagen, categoria, detallePaquete) VALUES(?,?,?,?,?,?)";
+        //Consulta SQL para insertar dentro de la tabla paquete
+        String insert_paquete = "INSERT INTO paquete (nombrePaquete, descripcionPaquete, precioPaquete, imagen, categoria, detallePaquete) VALUES(?,?,?,?,?,?)";
         try {
-            ps = cnx.prepareStatement(cadSQL);
+            ps = cnx.prepareStatement(insert_paquete);
             ps.setString(1, p.getNombrePaquete());
             ps.setString(2, p.getDescripcionPaquete());
             ps.setDouble(3, p.getPrecioPaquete());
             ps.setString(4, p.getImagen());
-            ps.setString(5, p.getDetallePaquete());
+            ps.setString(5, p.getCategoria());
             ps.setString(6, p.getDetallePaquete());
 
             int ctos = ps.executeUpdate();

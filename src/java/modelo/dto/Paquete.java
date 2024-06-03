@@ -1,6 +1,7 @@
 package modelo.dto;
 
 public class Paquete {
+    //Atributos 
     int idPaquete;
     String nombrePaquete;
     String descripcionPaquete;
@@ -9,6 +10,7 @@ public class Paquete {
     String categoria;
     String detallePaquete;
 
+    //Constructor
     public Paquete() {
     }
 
@@ -22,6 +24,7 @@ public class Paquete {
         this.detallePaquete = detallePaquete;
     }
 
+    //Métodos getter y setter
     public int getIdPaquete() {
         return idPaquete;
     }
