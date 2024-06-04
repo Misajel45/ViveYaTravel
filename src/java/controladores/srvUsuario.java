@@ -95,9 +95,9 @@ public class srvUsuario extends HttpServlet {
         usuario = dao.identificar(usuario); //Verificar las credenciales con el metodo identificar que esta en la clase usuarioDAO
         if(usuario != null && usuario.getCargo().getNombreCargo().equals("administrador")){ //Si el cargo es administrador
             sesion = request.getSession(); //Crea una sesion
-            sesion.setAttribute("usuario", usuario);
+            sesion.setAttribute("admin", usuario);
             request.setAttribute("mensaje", "Bienvenido");
-            this.getServletConfig().getServletContext().getRequestDispatcher("/vista/index.jsp").forward(request, response);  //Redirecciona la vista del administrador
+            this.getServletConfig().getServletContext().getRequestDispatcher("/vista/ADMIndex.jsp").forward(request, response);  //Redirecciona la vista del administrador
         } else if(usuario != null && usuario.getCargo().getNombreCargo().equals("cliente")){ //Si el cargo es cliente
             sesion = request.getSession();
             sesion.setAttribute("cliente", usuario);

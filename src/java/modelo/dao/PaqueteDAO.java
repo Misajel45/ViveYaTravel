@@ -24,20 +24,20 @@ public class PaqueteDAO {
     public List listar() {
         List<Paquete> lista = new ArrayList<>();
         //Consulta SQL para mostrar
-        String SQL = "SELECT * FROM paquete WHERE categoria='T'";
+        String SQL = "SELECT idPaquete, nombrePaquete, descripcionPaquete, precioPaquete, imagen, categoria, detallePaquete FROM paquete WHERE categoria='T'";
         try {
             cnx = cn.getConexion();
             ps = cnx.prepareStatement(SQL);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Paquete p = new Paquete();
-                p.setIdPaquete(rs.getInt(1));
-                p.setNombrePaquete(rs.getString(2));
-                p.setDescripcionPaquete(rs.getString(3));
-                p.setPrecioPaquete(rs.getDouble(4));
-                p.setImagen(rs.getString(5));
-                p.setCategoria(rs.getString(6));
-                p.setDetallePaquete(rs.getString(7));
+                p.setIdPaquete(rs.getInt("idPaquete"));
+                p.setNombrePaquete(rs.getString("nombrePaquete"));
+                p.setDescripcionPaquete(rs.getString("descripcionPaquete"));
+                p.setPrecioPaquete(rs.getDouble("precioPaquete"));
+                p.setImagen(rs.getString("imagen"));
+                p.setCategoria(rs.getString("categoria"));
+                p.setDetallePaquete(rs.getString("detallePaquete"));
                 lista.add(p);
             }
         } catch (SQLException e) {
@@ -48,29 +48,29 @@ public class PaqueteDAO {
     //Para poner dentro de una lista las promociones registrados
     public List list() {
         List<Paquete> promociones = new ArrayList<>();
-        //consulta SQL con restricción en la categoria
-        String SQL = "SELECT * FROM paquete WHERE categoria='P'";
-
+        //Consulta SQL para mostrar
+        String SQL = "SELECT idPaquete, nombrePaquete, descripcionPaquete, precioPaquete, imagen, categoria, detallePaquete FROM paquete WHERE categoria='P'";
         try {
             cnx = cn.getConexion();
             ps = cnx.prepareStatement(SQL);
             rs = ps.executeQuery();
-
             while (rs.next()) {
-                Paquete o = new Paquete();
-                o.setIdPaquete(rs.getInt(1));
-                o.setNombrePaquete(rs.getString(2));
-                o.setDescripcionPaquete(rs.getString(3));
-                o.setPrecioPaquete(rs.getDouble(4));
-                o.setImagen(rs.getString(5));
-                o.setCategoria(rs.getString(6));
-                o.setDetallePaquete(rs.getString(7));
-                promociones.add(o);
+                Paquete p = new Paquete();
+                p.setIdPaquete(rs.getInt("idPaquete"));
+                p.setNombrePaquete(rs.getString("nombrePaquete"));
+                p.setDescripcionPaquete(rs.getString("descripcionPaquete"));
+                p.setPrecioPaquete(rs.getDouble("precioPaquete"));
+                p.setImagen(rs.getString("imagen"));
+                p.setCategoria(rs.getString("categoria"));
+                p.setDetallePaquete(rs.getString("detallePaquete"));
+                promociones.add(p);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
         return promociones;
     }
+    
+    
 
     //Metodo para agregar nuevos tours
     public String insert(Paquete p) {
@@ -86,12 +86,6 @@ public class PaqueteDAO {
             ps.setString(5, p.getCategoria());
             ps.setString(6, p.getDetallePaquete());
 
-            int ctos = ps.executeUpdate();
-            if (ctos > 0) {
-                resp = "Registrado";
-            } else {
-                resp = "No se ha registrado";
-            }
         } catch (SQLException ex) {
             resp = "Error en la inserción: " + ex.getMessage();
         }

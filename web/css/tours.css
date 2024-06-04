@@ -158,3 +158,15 @@ fieldset {
   padding: 0;
 }
 
+/*Para los puntos de salida*/
+.ubicacion-icono {
+    display: inline-block; /* Asegura que el enlace sea un bloque en línea */
+    width: 20px; /* Ancho del icono */
+    height: 20px; /* Alto del icono */
+    background-image: url('../img/ubicacion.jpeg'); /* Ruta a tu ícono de ubicación */
+    background-size: contain; /* Ajusta el tamaño del ícono al tamaño del enlace */
+    background-repeat: no-repeat; /* Evita que el ícono se repita */
+    text-indent: -9999px; /* Oculta el texto del enlace */
+}
+
+
