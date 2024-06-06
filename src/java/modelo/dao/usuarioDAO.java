@@ -78,18 +78,17 @@ public class usuarioDAO {
     }
     
     //----------------------
-    public List repUsuario() {
+    public List<usuario> repUsuario() {
         List<usuario> repUsuario = new ArrayList<>();
-        String reporte = "SELECT idUsuario, nombre, apellido, nroCelular, nroDni,correoElectronico, clave FROM usuario WHERE idCargo='1'";
-        
-        PreparedStatement ps = null;   //Para preparar la consulta
-        ResultSet rs = null; 
+        String reporte = "SELECT idUsuario, nombre, apellido, nroCelular, nroDni, correoElectronico, clave FROM usuario WHERE idCargo = 1";
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         try {
             ps = cn.prepareStatement(reporte);
-            rs = ps.executeQuery(); 
+            rs = ps.executeQuery();
             while (rs.next()) {
                 usuario u = new usuario();
-                u.setIdUsuario(rs.getInt("idUsuaeio"));
+                u.setIdUsuario(rs.getInt("idUsuario"));
                 u.setNombre(rs.getString("nombre"));
                 u.setApellido(rs.getString("apellido"));
                 u.setNroCelular(rs.getInt("nroCelular"));
@@ -99,8 +98,20 @@ public class usuarioDAO {
                 repUsuario.add(u);
             }
         } catch (SQLException e) {
+            System.out.println("Error al obtener usuarios: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null && !rs.isClosed()) {
+                    rs.close();
+                }
+                if (ps != null && !ps.isClosed()) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar recursos: " + e.getMessage());
+            }
         }
-        return repUsuario;        
-    } 
+        return repUsuario;
+    }
 
 }

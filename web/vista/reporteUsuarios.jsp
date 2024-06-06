@@ -7,10 +7,8 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
         <h1>Reporte usuarios</h1>
-        <c:forEach var="u" items="${repUsuario}">
-            <span>${u.getNombre()}</span>
-        </c:forEach>
         <table class="tablaRep">
             <thead>
                 <tr>
@@ -26,13 +24,13 @@
             <tbody>
                 <c:forEach var="u" items="${repUsuario}">
                 <tr>
-                    <td>${u.getIdUsuario()}</td>
-                    <td>${u.getNombre()}</td>
-                    <td>${u.getApellido()}</td>
-                    <td>${u.getNroCelular()}</td>
-                    <td>${u.getNroDni()}</td>
-                    <td>${u.getCorreoElectronico()}</td>
-                    <td>${u.getClave()}</td>
+                    <td>${u.idUsuario}</td>
+                    <td>${u.nombre}</td>
+                    <td>${u.apellido}</td>
+                    <td>${u.nroCelular}</td>
+                    <td>${u.nroDni}</td>
+                    <td>${u.correoElectronico}</td>
+                    <td>${u.clave}</td>
                 </tr>
                 </c:forEach>
             </tbody>
