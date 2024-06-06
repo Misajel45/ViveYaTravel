@@ -20,7 +20,7 @@
         </nav>
     </div>
     <div class="carro">
-        <a href="#"><img class="carrito"/><i class="fa-solid fa-cart-shopping carrito"></i></a>
+        <a href="main.jsp"><img class="carrito"/><i class="fa-solid fa-cart-shopping carrito"></i></a>
     </div>
     <div class="usuario-container">
         <p class="bienvenido">
