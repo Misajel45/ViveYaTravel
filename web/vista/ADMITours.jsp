@@ -13,7 +13,7 @@
     </head>
 
     <%-- Traer header --%>
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="ADMIHeader.jsp"/>
 
     <body>
         <h1 class="tCat">Crea recuerdos...</h1>

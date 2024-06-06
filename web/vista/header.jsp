@@ -26,13 +26,10 @@
         <p class="bienvenido">
             <% 
                 usuario cliente = (usuario) session.getAttribute("cliente");
-                usuario admin = (usuario) session.getAttribute("admin");
                  
                 if (cliente != null) {
                     out.print("Hola " + cliente.getNombre());
-                } else if(admin != null){
-                    out.print("Hola " + admin.getCargo().getNombreCargo());
-                } 
+                }
                 else {
                     out.print("Bienvenido invitado");
                 }

@@ -7,7 +7,7 @@
     <div class="header">
 <div class="contHeader">
     <div class="logo">
-        <a href="index.jsp"><img src="https://www.viveyatravel.com/imagenes/logo-web-vive-ya-travel-2.png" class="logo"></a>
+        <a href="vista/ADMIndex.jsp"><img src="https://www.viveyatravel.com/imagenes/logo-web-vive-ya-travel-2.png" class="logo"></a>
     </div>
     <div class="navbar">
         <nav>
@@ -25,16 +25,16 @@
     <div class="usuario-container">
         <p class="bienvenido">
             <% 
-                usuario cliente = (usuario) session.getAttribute("cliente");
-                if (cliente != null) {
-                    out.print("Hola " + cliente.getNombre());
+                usuario admin = (usuario) session.getAttribute("admin");
+                if (admin != null) {
+                    out.print("Hola " + admin.getCargo().getNombreCargo());
                 } else {
                     out.print("Bienvenido invitado");
                 }
             %>
         </p>
         <div class="usuario">
-            <% if (cliente != null) { %>
+            <% if (admin != null) { %>
                 <a href="${pageContext.request.contextPath}/srvUsuario?accion=cerrar"><i class="fa-solid fa-right-to-bracket cerrar"></i></a>
             <% } else { %>
                 <a href="${pageContext.request.contextPath}/vista/iniciarSesion.jsp"><i class="fa-solid fa-user usuario"></i></a>
