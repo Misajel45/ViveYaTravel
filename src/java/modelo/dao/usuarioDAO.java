@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import modelo.dto.cargo;
 import modelo.dto.usuario;
 
@@ -74,5 +76,31 @@ public class usuarioDAO {
         
         return usu;
     }
+    
+    //----------------------
+    public List repUsuario() {
+        List<usuario> repUsuario = new ArrayList<>();
+        String reporte = "SELECT idUsuario, nombre, apellido, nroCelular, nroDni,correoElectronico, clave FROM usuario WHERE idCargo='1'";
+        
+        PreparedStatement ps = null;   //Para preparar la consulta
+        ResultSet rs = null; 
+        try {
+            ps = cn.prepareStatement(reporte);
+            rs = ps.executeQuery(); 
+            while (rs.next()) {
+                usuario u = new usuario();
+                u.setIdUsuario(rs.getInt("idUsuaeio"));
+                u.setNombre(rs.getString("nombre"));
+                u.setApellido(rs.getString("apellido"));
+                u.setNroCelular(rs.getInt("nroCelular"));
+                u.setNroDni(rs.getInt("nroDni"));
+                u.setCorreoElectronico(rs.getString("correoElectronico"));
+                u.setClave(rs.getString("clave"));
+                repUsuario.add(u);
+            }
+        } catch (SQLException e) {
+        }
+        return repUsuario;        
+    } 
 
 }
