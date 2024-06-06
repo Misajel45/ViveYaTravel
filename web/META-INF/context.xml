@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/ViveYaTravel"/>
+<Context path="/ViveYaTravel">
+    <Resource name="mail/Session" auth="Container"
+              type="javax.mail.Session"
+              mail.smtp.host="smtp.gmail.com"
+              mail.smtp.port="587"
+              mail.smtp.auth="true"
+              mail.smtp.starttls.enable="true"
+              mail.smtp.user="misajsebas19@gmail.com"
+              mail.smtp.password="prrl vhmo ancs imyp"/>
+</Context>

@@ -6,11 +6,13 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import modelo.dao.correo;
+
 public class ConectarBD {
     public Connection getConexion() {
         Connection cnx = null;
         
-          String url = "jdbc:mysql://localhost:3309/bdAgenciaDeViajes?useTimeZone=true&"
+          String url = "jdbc:mysql://localhost:3306/bdAgenciaDeViajes?useTimeZone=true&"
                 + "serverTimezone=UTC&autoReconnect=true";
 
         String user = "root";
@@ -34,6 +36,10 @@ public class ConectarBD {
         ConectarBD cdb = new ConectarBD();
         Connection cnx = cdb.getConexion();
         System.out.println(""+cnx.getCatalog());
+        
+        String toEmail = "misajsebas19@gmail.com"; // Reemplaza con un correo de prueba
+        String nombre = "Usuario de Prueba";
+        correo.enviarCorreoBienvenida(toEmail, nombre);
     }
     
 }

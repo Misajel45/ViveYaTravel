@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.dao.usuarioDAO;
 import modelo.dto.usuario;
+import modelo.dao.correo;
 
 @WebServlet(name = "srvRegistroUsuario", urlPatterns = {"/srvRegistroUsuario"})   //Definicion del nombre del servlet y la url de como acceder
 
@@ -55,6 +56,8 @@ public class srvRegistroUsuario extends HttpServlet {
                 try {
                     // Registra el usuario en la base de datos
                     usuarioDAO.registrar(usuario);
+                    correo.enviarCorreoBienvenida(correoElectronico, nombre);
+                    System.out.println(correoElectronico);
                     // Redireccionar una vez el registro fue exitoso
                     response.sendRedirect("./vista/iniciarSesion.jsp");
                 } catch (Exception ex) {
