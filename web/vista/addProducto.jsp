@@ -49,6 +49,7 @@
                             <h3>Agregar Paquete</h3>
                         </div>                
                         <div class="card-body">
+                            <!-- Formulario para agregar un paquete -->
                             <form action="Controlador?accion=GuardarProducto" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Nombres:</label>
@@ -77,6 +78,7 @@
                     </div>
                 </div> 
                 <div class="col-sm-7">
+                    <!-- Tabla para mostrar los paquetes -->
                     <table class="table table-responsive">
                         <thead class="">
                             <tr class="text-center">
@@ -89,7 +91,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                             <!-- Itera sobre los productos para mostrarlos en la tabla -->
                                 <tr class="text-center">
                                     <td>${p.getId()}</td>
                                     <td>${p.getNombres()}
@@ -110,6 +112,7 @@
                 </div>
             </div>
         </div>
+        <!-- Scripts de Bootstrap y dependencias -->
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

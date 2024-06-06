@@ -17,11 +17,14 @@
         <link href="css/estilos1.css" rel="stylesheet" type="text/css"/>
         <title>Carrito de Compras</title>
     </head>
-    <body>       
+    <body>
+        <!-- Barra de navegación -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <!-- Botón para colapsar la barra de navegación en pantallas pequeñas -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Enlace a la página principal -->
             <a class="navbar-brand" href="index.jsp"><i>Vive Ya Travel</i></a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -32,17 +35,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="main.jsp"><i class="fas fa-plus-circle"></i> Seguir Comprando</a>
                     </li>                  
-                </ul>                                            
+                </ul>
+                <!-- Menú desplegable de usuario -->
                 <ul class="navbar-nav btn-group my-2 my-lg-0" role="group">
                     <a style="color: white; cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fas fa-user-tie"></i> ${logueo}</a>
+                        <i class="fas fa-user-tie"></i> ${logueo}</a> <!-- Muestra el nombre de usuario -->
                     <div class="dropdown-menu text-center dropdown-menu-right">
+                        <!-- Imagen de usuario -->
                         <a class="dropdown-item" href="#"><img src="img/user.png" alt="60" height="60"/></a>                        
                         <a class="dropdown-item" href="#">${user}</a>
+                         <!-- Correo del usuario -->
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal">${correo}</a>
                         <div class="dropdown-divider"></div>
+                        <!-- Enlace a las compras del usuario -->
                         <a class="dropdown-item" href="Controlador?accion=MisCompras">Mis Compras</a>
                         <div class="dropdown-divider"></div>
+                        <!-- Enlace para salir -->
                         <a class="dropdown-item" href="Controlador?accion=Salir"> <i class="fas fa-arrow-right"> Salir</i></a>                        
                     </div>
                 </ul>     

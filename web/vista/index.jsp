@@ -2,8 +2,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Metadata para configurar el contenido y el juego de caracteres de la página -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Paquetes Turísticos</title>
+        <title>Vive Ya Travel</title>
+        <!-- Enlaces a hojas de estilo externas e internas -->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet" type="text/css"/>
         <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet" type="text/css"/>
@@ -12,9 +14,10 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
+        <!-- Incluir el encabezado de la página -->
         <jsp:include page="header.jsp"/>
         <main>
-            <!-- Carrusel de imágenes -->
+            <!-- Sección del carrusel de imágenes -->
             <div class="carrusel-body">
                 <div class="contenedor-carrusel">
                     <div class="carruseles" id="slider">
@@ -28,13 +31,17 @@
                             <img src="${pageContext.request.contextPath}/img/3.jpg" alt="Castillo de Chancay"/>
                         </section>
                     </div>
+                        <!-- Botón para mover el carrusel a la izquierda -->
                     <div class="btn-left"><i class='bx bxs-chevron-left'></i></div>
+                    <!-- Botón para mover el carrusel a la derecha -->
                     <div class="btn-right"><i class='bx bxs-chevron-right'></i></div>
                 </div>
             </div>
 
+            <!-- Título principal de la sección de aventuras -->
             <h1 class="heading-1">DESCUBRE TU NUEVA AVENTURA</h1>
 
+                 <!-- Sección de características destacadas -->
             <section class="container container-features">
                 <div class="card-feature">
                     <i class="fa-solid fa-plane-up"></i>
@@ -70,7 +77,7 @@
 
 
 
-            <!-- Paquetes Turísticos -->
+            <!-- Título principal de la sección de paquetes turísticos -->
 
             <h1 class="heading-1">PAQUETES TURISTICOS</h1>
             <section class="container top-products">
@@ -128,7 +135,7 @@
                     <!-- Paquete 3 -->
                     <div class="card-product">
                         <div class="container-img">
-                            <img src="${pageContext.request.contextPath}/paquetes/titicaca.png" alt="Lago Titicaca" />
+                            <img src="${pageContext.request.contextPath}/paquetes/titicaca.jpg" alt="Lago Titicaca" />
                             <div class="button-group">
                                 <span><i class="fa-regular fa-eye"></i></span>
                                 <span><i class="fa-regular fa-heart"></i></span>
@@ -334,6 +341,8 @@
                 </div>
             </section>
         </main>
+                            
+        <!-- Incluir el pie de página -->
         <jsp:include page="footer.jsp"/>
         <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
         <script src="${pageContext.request.contextPath}/js/carrusel.js" type="text/javascript"></script>
