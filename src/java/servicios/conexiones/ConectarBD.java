@@ -37,9 +37,6 @@ public class ConectarBD {
         Connection cnx = cdb.getConexion();
         System.out.println(""+cnx.getCatalog());
         
-        String toEmail = "misajsebas19@gmail.com"; // Reemplaza con un correo de prueba
-        String nombre = "Usuario de Prueba";
-        correo.enviarCorreoBienvenida(toEmail, nombre);
     }
     
 }
