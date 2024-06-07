@@ -69,8 +69,6 @@ public class PaqueteDAO {
         }
         return promociones;
     }
-    
-    
 
     //Metodo para agregar nuevos tours
     public String insert(Paquete p) {
@@ -86,8 +84,28 @@ public class PaqueteDAO {
             ps.setString(5, p.getCategoria());
             ps.setString(6, p.getDetallePaquete());
 
+            // Ejecutar la consulta preparada para insertar el paquete
+            int filasAfectadas = ps.executeUpdate();
+
+            if (filasAfectadas > 0) {
+                resp = "Paquete insertado correctamente";
+            } else {
+                resp = "Error al insertar el paquete";
+            }
         } catch (SQLException ex) {
             resp = "Error en la inserción: " + ex.getMessage();
+        } finally {
+            try {
+                // Cerrar recursos
+                if (ps != null) {
+                    ps.close();
+                }
+                if (cnx != null) {
+                    cnx.close();
+                }
+            } catch (SQLException e) {
+                resp = "Error al cerrar la conexión: " + e.getMessage();
+            }
         }
         return resp;
     }

@@ -11,6 +11,7 @@
         <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet" type="text/css"/>
         <link href="${pageContext.request.contextPath}/css/carrusel.css" rel="stylesheet" type="text/css"/>
         <link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>

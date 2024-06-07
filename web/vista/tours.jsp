@@ -109,8 +109,6 @@
                     modalBodyInput.textContent = tourDetalle;
                 });
             });
-
-
         </script>
     </body>
 
